@@ -798,16 +798,15 @@ h6 {
   text-decoration: underline;
 }
 
-@media (max-width: 968px) {
+/* Mobile Responsive */
+@media (max-width: 480px) {  
+  
   .login-container {
     min-height: auto;       /* libera altura conforme conteúdo */
     padding: 40px 20px;
     align-items: flex-start; /* começa mais em cima */
   }
-}
 
-/* Mobile Responsive */
-@media (max-width: 480px) {  
   .login-card {
       padding: 36px 28px;
       border-radius: 8px;

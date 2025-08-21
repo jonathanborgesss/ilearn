@@ -27,7 +27,7 @@
   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Arquivo CSS Principal -->
-  <link href="../assets/css/login.css" rel="stylesheet">
+  <link href="../assets/css/cadastro.css" rel="stylesheet">
 
 </head>
 
@@ -76,16 +76,21 @@
             <div class="logo-login">
               <img src="../assets/img/logo.png" alt="" width="80" height="80">
             </div>
-            <h1>Login</h1>
-            <p>Bem-Vindo de volta! Faça login para continuar</p>
+            <h1>Cadastro</h1>
+            <p>Bem-Vindo! Faça seu cadastro gratuitamente</p>
           </div>
 
           <form class="login-form" id="loginForm" novalidate>
             <div class="input-group">
+                <input type="name" id="name" name="name" placeholder=" ">
+                <label for="name">Nome</label>
+                <span class="input-border"></span>
+            </div>
+
+            <div class="input-group">
               <input type="email" id="email" name="email" placeholder=" ">
               <label for="email">Email</label>
               <span class="input-border"></span>
-              <span class="error-message" id="emailError"></span>
             </div>
 
             <div class="input-group">
@@ -99,7 +104,6 @@
                 </svg>
               </button>
               <span class="input-border"></span>
-              <span class="error-message" id="passwordError"></span>
             </div>
 
             <div class="form-options">
@@ -107,7 +111,7 @@
             </div>
 
             <button type="submit" class="submit-btn">
-              <span class="btn-text">Entrar</span>
+              <span class="btn-text">Cadastrar</span>
             </button>
           </form>
 
@@ -140,8 +144,8 @@
           </div>
 
           <div class="signup-link">
-            <span>Não tem uma conta? </span>
-            <a href="cadastro.html">Criar conta</a>
+            <span>Já tem uma conta? </span>
+            <a href="login.html">Entrar em uma conta</a>
           </div>
         </div>
       </div>
