@@ -1,17 +1,6 @@
-/**
-* Template Name: iLanding
-* Template URL: https://bootstrapmade.com/ilanding-bootstrap-landing-page-template/
-* Updated: Nov 12 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-(function() {
+(function () {
   "use strict";
 
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
@@ -22,9 +11,6 @@
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
-  /**
-   * Mobile nav toggle
-   */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
@@ -36,9 +22,6 @@
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   }
 
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
       if (document.querySelector('.mobile-nav-active')) {
@@ -48,11 +31,8 @@
 
   });
 
-  /**
-   * Toggle mobile nav dropdowns
-   */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -60,9 +40,6 @@
     });
   });
 
-  /**
-   * Scroll top button
-   */
   let scrollTop = document.querySelector('.scroll-top');
 
   function toggleScrollTop() {
@@ -81,9 +58,6 @@
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
-  /**
-   * Animation on scroll function and init
-   */
   function aosInit() {
     AOS.init({
       duration: 600,
@@ -94,18 +68,12 @@
   }
   window.addEventListener('load', aosInit);
 
-  /**
-   * Initiate glightbox
-   */
   const glightbox = GLightbox({
     selector: '.glightbox'
   });
 
-  /**
-   * Init swiper sliders
-   */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -120,24 +88,15 @@
 
   window.addEventListener("load", initSwiper);
 
-  /**
-   * Initiate Pure Counter
-   */
   new PureCounter();
 
-  /**
-   * Frequently Asked Questions Toggle
-   */
   document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
     faqItem.addEventListener('click', () => {
       faqItem.parentNode.classList.toggle('faq-active');
     });
   });
 
-  /**
-   * Correct scrolling position upon page load for URLs containing hash links.
-   */
-  window.addEventListener('load', function(e) {
+  window.addEventListener('load', function (e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
@@ -152,9 +111,6 @@
     }
   });
 
-  /**
-   * Navmenu Scrollspy
-   */
   let navmenulinks = document.querySelectorAll('.navmenu a');
 
   function navmenuScrollspy() {
@@ -175,3 +131,39 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+function filtrarLivros(categoria, event) {
+  let cards = document.querySelectorAll('.card');
+
+  let botoes = document.querySelectorAll('.dropdown-item');
+
+  botoes.forEach(b => b.classList.remove('ativo'));
+
+  if (event) event.target.classList.add('ativo');
+
+  cards.forEach(card => {
+    if (categoria === 'todos' || card.classList.contains(categoria)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+function pesquisarLivros() {
+  const termo = document.getElementById('pesquisarLivro').value.toLowerCase();
+  const livros = document.querySelectorAll('.grid .card');
+  let contador = 0;
+
+  livros.forEach(livro => {
+    const texto = livro.querySelector('h3').textContent.toLowerCase(); // busca apenas no título
+
+    if (texto.includes(termo)) {
+      livro.style.display = "";
+      contador++;
+    } else {
+      livro.style.display = "none";
+    }
+  });
+
+}

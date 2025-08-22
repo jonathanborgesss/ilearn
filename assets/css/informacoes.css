@@ -491,3 +491,30 @@ h6 {
         padding-top: 80px;
     }
 }
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-accent:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+    color: var(--contrast-color);
+}
+
+.btn-outline-accent {
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    transition: 0.3s;
+}
+
+.btn-outline-accent:hover {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+}
+
+.border-accent {
+    border-left: 4px solid var(--accent-color) !important;
+}

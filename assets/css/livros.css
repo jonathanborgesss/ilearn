@@ -479,3 +479,143 @@ h6 {
     opacity: 1;
     bottom: 15px;
 }
+
+.filtros {
+    margin: 20px 0;
+}
+
+.dropdown-menu button {
+    width: 100%;
+    text-align: left;
+}
+
+/* ---- CATEGORIAS ---- */
+.categorias {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* permite quebrar linha */
+    justify-content: center;
+    /* centraliza no meio */
+    gap: 10px;
+    /* espaçamento entre botões */
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+.categorias button {
+    flex: 0 1 auto;
+    /* botão se ajusta ao conteúdo */
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+    background: #f0f0f0;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.categorias button:hover {
+    background: #007bff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.categorias button.ativo {
+    background: #007bff;
+    color: white;
+}
+
+
+/* ---- GRID ---- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 15px;
+}
+
+/* ---- CARD ---- */
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 180px;
+    /* menor largura */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    /* menor altura */
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .img-container img {
+    transform: scale(1.05);
+}
+
+/* Overlay "Saiba mais" */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay a {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    background: #007bff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.img-container:hover .overlay {
+    opacity: 1;
+}
+
+/* Corpo do card */
+.card-body {
+    padding: 10px;
+    text-align: center;
+}
+
+.card-body h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.card-body p {
+    font-size: 12px;
+    margin: 2px 0;
+    color: #666;
+}
+
