@@ -802,6 +802,7 @@ h6 {
 @media (max-width: 480px) {  
   
   .login-container {
+    margin-top: 222%;
     min-height: auto;       /* libera altura conforme conteúdo */
     padding: 40px 20px;
     align-items: flex-start; /* começa mais em cima */
