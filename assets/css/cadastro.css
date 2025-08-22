@@ -780,7 +780,6 @@ h6 {
   transform: translateY(0);
 }
 
-/* Signup Link */
 .signup-link {
   text-align: center;
   font-size: 16px;
@@ -805,10 +804,8 @@ h6 {
   .login-container {
     margin-top: 15%;
     min-height: auto;
-    /* libera altura conforme conteúdo */
     padding: 40px 20px;
     align-items: flex-start;
-    /* começa mais em cima */
   }
 
   .login-card {

@@ -480,12 +480,10 @@ h6 {
     bottom: 15px;
 }
 
-/* Espaço para o header fixo */
 .main {
     padding-top: 100px;
 }
 
-/* Ajuste para mobile */
 @media (max-width: 768px) {
     .main {
         padding-top: 80px;
