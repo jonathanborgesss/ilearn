@@ -1,12 +1,12 @@
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Nunito",  sans-serif;
-  --nav-font: "Inter",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Nunito", sans-serif;
+  --nav-font: "Inter", sans-serif;
 }
 
 /* Cores Globais */
-:root { 
+:root {
   --background-color: #ffffff;
   --default-color: #212529;
   --heading-color: #2d465e;
@@ -17,7 +17,7 @@
 
 /* Cores do Menu de Navegação */
 :root {
-  --nav-color: #212529;   
+  --nav-color: #212529;
   --nav-hover-color: #0073ff;
   --nav-mobile-background-color: #ffffff;
   --nav-dropdown-background-color: #ffffff;
@@ -215,6 +215,8 @@ h6 {
 /* Navmenu - Desktop */
 @media (min-width: 1200px) {
   .navmenu {
+    display: flex;
+    align-items: center;
     padding: 0;
   }
 
@@ -319,15 +321,28 @@ h6 {
   }
 }
 
+.header .header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
     font-size: 28px;
-    line-height: 0;
+    line-height: 1;
     margin-right: 10px;
     cursor: pointer;
     transition: color 0.3s;
+    position: relative;
+    top: 3.2px;
+  }
+
+  .mobile-nav-toggle i {
+    display: block;
+    line-height: 1;
   }
 
   .navmenu {
@@ -703,7 +718,7 @@ section,
   # Seção Hero
 --------------------------------------------------------------*/
 .hero {
-  margin-top: -4%;
+  margin-top: -6%;
   position: relative;
   padding-top: 160px;
   background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 50%, color-mix(in srgb, var(--accent-color), transparent 98%) 25%, transparent 50%);
@@ -740,6 +755,7 @@ section,
   .hero {
     margin-top: -10px;
   }
+
   .hero .hero-content {
     text-align: center;
     margin-bottom: 3rem;

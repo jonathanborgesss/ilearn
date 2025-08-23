@@ -167,3 +167,17 @@ function pesquisarLivros() {
   });
 
 }
+
+const userMenu = document.querySelector('.user-menu');
+const userButton = document.querySelector('.user-button');
+
+userButton.addEventListener('click', () => {
+    userMenu.classList.toggle('active');
+});
+
+// Fechar ao clicar fora
+document.addEventListener('click', (e) => {
+    if (!userMenu.contains(e.target)) {
+        userMenu.classList.remove('active');
+    }
+});

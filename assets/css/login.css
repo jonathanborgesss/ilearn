@@ -1,12 +1,12 @@
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Nunito",  sans-serif;
-  --nav-font: "Inter",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Nunito", sans-serif;
+  --nav-font: "Inter", sans-serif;
 }
 
 /* Cores Globais */
-:root { 
+:root {
   --background-color: #ffffff;
   --default-color: #212529;
   --heading-color: #2d465e;
@@ -17,7 +17,7 @@
 
 /* Cores do Menu de Navegação */
 :root {
-  --nav-color: #212529;   
+  --nav-color: #212529;
   --nav-hover-color: #0073ff;
   --nav-mobile-background-color: #ffffff;
   --nav-dropdown-background-color: #ffffff;
@@ -215,6 +215,8 @@ h6 {
 /* Navmenu - Desktop */
 @media (min-width: 1200px) {
   .navmenu {
+    display: flex;
+    align-items: center;
     padding: 0;
   }
 
@@ -324,10 +326,12 @@ h6 {
   .mobile-nav-toggle {
     color: var(--nav-color);
     font-size: 28px;
-    line-height: 0;
+    line-height: 1;
     margin-right: 10px;
     cursor: pointer;
     transition: color 0.3s;
+    position: relative;
+    top: 3.2px;
   }
 
   .navmenu {
@@ -445,6 +449,7 @@ h6 {
     display: block;
   }
 }
+
 /*--------------------------------------------------------------
 # Botão de Scroll Top
 --------------------------------------------------------------*/
@@ -481,12 +486,18 @@ h6 {
 
 .login-container {
   margin-top: 4%;
-  display: flex;              /* ativa o flexbox */
-  justify-content: center;    /* centraliza horizontalmente */
-  align-items: center;        /* centraliza verticalmente */
-  height: 100vh;              /* ocupa toda a altura da tela */
-  padding: 20px;              /* um pouco de espaçamento */
-  background-color: var(--background-color); /* opcional */
+  display: flex;
+  /* ativa o flexbox */
+  justify-content: center;
+  /* centraliza horizontalmente */
+  align-items: center;
+  /* centraliza verticalmente */
+  height: 100vh;
+  /* ocupa toda a altura da tela */
+  padding: 20px;
+  /* um pouco de espaçamento */
+  background-color: var(--background-color);
+  /* opcional */
 }
 
 .login-card {
@@ -566,8 +577,8 @@ h6 {
   padding: 0 2px;
 }
 
-.input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label {
+.input-group input:focus+label,
+.input-group input:not(:placeholder-shown)+label {
   top: 0;
   font-size: 15px;
   font-weight: 500;
@@ -575,7 +586,7 @@ h6 {
   transform: translateY(-50%);
 }
 
-.input-group input:not(:focus):not(:placeholder-shown) + label {
+.input-group input:not(:focus):not(:placeholder-shown)+label {
   color: #6b7385;
 }
 
@@ -590,7 +601,7 @@ h6 {
   transition: width 0.3s ease;
 }
 
-.input-group input:focus ~ .input-border {
+.input-group input:focus~.input-border {
   width: 100%;
 }
 
@@ -797,8 +808,8 @@ h6 {
   text-decoration: underline;
 }
 
-@media (max-width: 480px) {  
-  
+@media (max-width: 480px) {
+
   .login-container {
     margin-top: 15%;
     min-height: auto;
@@ -807,21 +818,21 @@ h6 {
   }
 
   .login-card {
-      padding: 36px 28px;
-      border-radius: 8px;
+    padding: 36px 28px;
+    border-radius: 8px;
   }
-  
+
   .login-header h1 {
-      font-size: 1.375rem;
+    font-size: 1.375rem;
   }
-  
+
   .form-options {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
-  
+
   .social-buttons {
-      flex-direction: column;
+    flex-direction: column;
   }
 }

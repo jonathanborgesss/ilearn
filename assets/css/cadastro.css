@@ -215,6 +215,8 @@ h6 {
 /* Navmenu - Desktop */
 @media (min-width: 1200px) {
   .navmenu {
+    display: flex;
+    align-items: center;
     padding: 0;
   }
 
@@ -324,10 +326,12 @@ h6 {
   .mobile-nav-toggle {
     color: var(--nav-color);
     font-size: 28px;
-    line-height: 0;
+    line-height: 1;
     margin-right: 10px;
     cursor: pointer;
     transition: color 0.3s;
+    position: relative;
+    top: 3.2px;
   }
 
   .navmenu {
@@ -800,7 +804,6 @@ h6 {
 
 /* Mobile Responsive */
 @media (max-width: 480px) {
-
   .login-container {
     margin-top: 15%;
     min-height: auto;
