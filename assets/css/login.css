@@ -485,19 +485,13 @@ h6 {
 }
 
 .login-container {
-  margin-top: 4%;
+  margin-top: 2%;
   display: flex;
-  /* ativa o flexbox */
   justify-content: center;
-  /* centraliza horizontalmente */
   align-items: center;
-  /* centraliza verticalmente */
   height: 100vh;
-  /* ocupa toda a altura da tela */
   padding: 20px;
-  /* um pouco de espaçamento */
   background-color: var(--background-color);
-  /* opcional */
 }
 
 .login-card {
@@ -535,7 +529,6 @@ h6 {
   font-weight: 400;
 }
 
-/* Input Groups with Floating Labels */
 .input-group {
   position: relative;
   margin-bottom: 25px;
@@ -590,7 +583,6 @@ h6 {
   color: #6b7385;
 }
 
-/* Custom Border Animation */
 .input-border {
   position: absolute;
   bottom: 0;
@@ -605,7 +597,6 @@ h6 {
   width: 100%;
 }
 
-/* Password Toggle */
 .input-group:has(.password-toggle) input {
   padding-right: 42px;
 }
@@ -631,11 +622,13 @@ h6 {
   color: var(--accent-color);
 }
 
-/* Form Options */
 .form-options {
-  display: flex;
+  margin-left: 2%;
+  display: block;
   justify-content: space-between;
+  text-align: center;
   align-items: center;
+  margin: 1 auto;
   margin-bottom: 28px;
   flex-wrap: wrap;
   gap: 16px;
@@ -657,6 +650,7 @@ h6 {
 .forgot-link {
   display: flex;
   align-items: center;
+  justify-content: center;
   color: var(--accent-color);
   text-decoration: none;
   font-size: 16px;
@@ -668,7 +662,6 @@ h6 {
   color: var(--accent-color);
 }
 
-/* Submit Button */
 .submit-btn {
   width: 100%;
   background: var(--accent-color);
@@ -725,7 +718,6 @@ h6 {
   opacity: 1;
 }
 
-/* Divider */
 .divider {
   text-align: center;
   margin: 24px 0;
@@ -753,7 +745,6 @@ h6 {
   letter-spacing: 0.5px;
 }
 
-/* Social Buttons */
 .social-buttons {
   display: flex;
   gap: 12px;
@@ -809,7 +800,6 @@ h6 {
 }
 
 @media (max-width: 480px) {
-
   .login-container {
     margin-top: 15%;
     min-height: auto;
