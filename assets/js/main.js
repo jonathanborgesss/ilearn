@@ -1,6 +1,14 @@
 (function () {
   "use strict";
 
+  window.addEventListener("load", () => {
+    const preloader = document.querySelector("#preloader");
+    if (preloader) {
+      preloader.classList.add("preloader-hidden");
+      setTimeout(() => preloader.remove(), 600);
+    }
+  });
+
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
@@ -156,8 +164,7 @@ function pesquisarLivros() {
   let contador = 0;
 
   livros.forEach(livro => {
-    const texto = livro.querySelector('h3').textContent.toLowerCase(); // busca apenas no título
-
+    const texto = livro.querySelector('h3').textContent.toLowerCase();
     if (texto.includes(termo)) {
       livro.style.display = "";
       contador++;
@@ -172,12 +179,11 @@ const userMenu = document.querySelector('.user-menu');
 const userButton = document.querySelector('.user-button');
 
 userButton.addEventListener('click', () => {
-    userMenu.classList.toggle('active');
+  userMenu.classList.toggle('active');
 });
 
-// Fechar ao clicar fora
 document.addEventListener('click', (e) => {
-    if (!userMenu.contains(e.target)) {
-        userMenu.classList.remove('active');
-    }
+  if (!userMenu.contains(e.target)) {
+    userMenu.classList.remove('active');
+  }
 });
