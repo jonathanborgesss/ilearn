@@ -1,65 +1,10 @@
+<?php
+use App\Utility\Paths;
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>iLearn</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-  <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/logo2.png" rel="apple-touch-icon">
-
-  <!-- Fontes -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-
-  <!-- Arquivos CSS do Vendor -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Arquivo CSS Principal -->
-  <link href="../assets/css/login.css" rel="stylesheet">
-
-</head>
-
 <body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div
-      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="../index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="../assets/img/logo.png" alt="">
-        <h1 class="sitename">iLearn</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="../index.html#hero">Home</a></li>
-          <li><a href="../index.html#about">Sobre</a></li>
-          <li><a href="../index.html#features">Recursos</a></li>
-          <li><a href="../index.html#services">Soluções</a></li>
-          <li><a href="../index.html#faq">FAQ</a></li>
-          <li><a href="../livros/livros.html">Catálogo</a></li>
-          <li><a href="../index.html#contact">Contato</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a class="btn-getstarted" href="../index.html">Voltar</a>
-
-    </div>
-  </header>
-
   <main class="main">
 
     <section>
@@ -67,18 +12,23 @@
         <div class="login-card">
           <div class="login-header">
             <div class="logo-login">
-              <img src="../assets/img/logo.png" alt="" width="80" height="80">
+              <img src="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER;?>/img/logo.png" alt="" width="80" height="80">
             </div>
-            <h1>Login</h1>
-            <p>Bem-Vindo de volta! Faça login para continuar</p>
+            <h1>Cadastro</h1>
+            <p>Bem-Vindo! Faça seu cadastro gratuitamente</p>
           </div>
 
-          <form class="login-form" id="loginForm" novalidate>
+          <form method="POST" action="<?php echo Paths::MAIN_FOLDER . Paths::CONTROLLER_FOLDER ?>ControllerUsuario.php" class="login-form" id="loginForm" novalidate>
+            <div class="input-group">
+              <input type="name" id="name" name="name" placeholder=" ">
+              <label for="name">Nome</label>
+              <span class="input-border"></span>
+            </div>
+
             <div class="input-group">
               <input type="email" id="email" name="email" placeholder=" ">
               <label for="email">Email</label>
               <span class="input-border"></span>
-              <span class="error-message" id="emailError"></span>
             </div>
 
             <div class="input-group">
@@ -92,15 +42,14 @@
                 </svg>
               </button>
               <span class="input-border"></span>
-              <span class="error-message" id="passwordError"></span>
             </div>
 
             <div class="form-options">
               <a href="#" class="forgot-link">Esqueceu a senha?</a>
             </div>
 
-            <button type="submit" class="submit-btn">
-              <span class="btn-text">Entrar</span>
+            <button name="cadastrar" type="submit" class="submit-btn">
+              <span class="btn-text">Cadastrar</span>
             </button>
           </form>
 
@@ -133,8 +82,8 @@
           </div>
 
           <div class="signup-link">
-            <span>Não tem uma conta? </span>
-            <a href="cadastro.html">Criar conta</a>
+            <span>Já tem uma conta? </span>
+            <a href="<?php echo Paths::MAIN_FOLDER . Paths::VIEW_FOLDER;?>Login">Entrar em uma conta</a>
           </div>
         </div>
       </div>
@@ -148,15 +97,15 @@
   <div id="preloader"></div>
 
   <!-- Arquivos JS do Vendor -->
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-  <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER;?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER;?>/vendor/php-email-form/validate.js"></script>
+  <script src="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER;?>/vendor/aos/aos.js"></script>
+  <script src="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER;?>/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER;?>/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER;?>/vendor/purecounter/purecounter_vanilla.js"></script>
 
   <!-- Arquivo JS Principal -->
-  <script src="../assets/js/main.js"></script>
+  <script src="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER;?>/js/main.js"></script>
 
 </body>
 
