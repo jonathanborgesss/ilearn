@@ -27,7 +27,7 @@ use App\Utility\Paths;
 
                 <!-- Favicons -->
                 <link href="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER ?>img/favicon.png" rel="icon">
-                <link href="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER ?>img/logo2.png" rel="apple-touch-icon">
+                <link href="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER ?>img/logo2.png" rel="Apple-touch-icon">
 
                 <!-- Fontes -->
                 <link href="https://fonts.googleapis.com" rel="preconnect">

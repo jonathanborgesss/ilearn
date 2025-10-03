@@ -1,6 +1,6 @@
 <?php
 namespace App\DAO;
-use app\Model\Usuario;
+use App\Model\Usuario;
 use Exception;
 use PDO;
 class UsuarioDAO
@@ -25,7 +25,7 @@ class UsuarioDAO
           try {
                $query = "SELECT * FROM usuario WHERE idUsuario = '$pk'";
                $select = ConnectDB::getConexao()->prepare($query);
-               $select->setFetchMode(PDO::FETCH_CLASS, 'app\Model\Usuario');
+               $select->setFetchMode(PDO::FETCH_CLASS, 'App\Model\Usuario');
                $select->execute();
                return $select->fetch();
           } catch (Exception $e) {
@@ -37,7 +37,7 @@ class UsuarioDAO
           try {
                $query = "SELECT * FROM usuario WHERE email = '$em'";
                $sql = ConnectDB::getConexao()->prepare($query);
-               $sql->setFetchMode(PDO::FETCH_CLASS, 'app\Model\Usuario');
+               $sql->setFetchMode(PDO::FETCH_CLASS, 'App\Model\Usuario');
                $sql->execute();
                return $sql->fetch();
           } catch (Exception $e) {

@@ -108,7 +108,7 @@ use App\Utility\Paths
               sua experiência de leitura importa. Aqui, leitores, estudantes e autores se encontram para compartilhar,
               avaliar e democratizar o acesso a um universo de conhecimento, fortalecendo juntos a educação.</p>
 
-            <div class="row feature-list-wrapper">
+            <div class="row feature-list-wrApper">
               <div class="col-md-6">
                 <ul class="feature-list">
                   <li><i class="bi bi-check-circle-fill"></i> Promoção da Leitura</li>
@@ -127,7 +127,7 @@ use App\Utility\Paths
           </div>
 
           <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="image-wrapper">
+            <div class="image-wrApper">
               <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
                 <img src="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER;?>img/about.png" alt="Business Meeting" class="img-fluid main-image rounded-4">
               </div>
