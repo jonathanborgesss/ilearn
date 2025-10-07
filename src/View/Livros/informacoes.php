@@ -1,5 +1,41 @@
 <?php
+use App\DAO\AutorDAO;
+use App\DAO\ClassificacaoDAO;
+use App\DAO\EditoraDAO;
+use App\DAO\ImagemDAO;
+use App\DAO\LivroDAO;
 use App\Utility\Paths;
+$idLivro = $_GET['id'] ?? 1;
+$autorDAO = new AutorDAO();
+$livroDAO = new LivroDAO();
+$editoraDAO = new EditoraDAO();
+$classificacaoDAO = new ClassificacaoDAO();
+$imagemDAO = new ImagemDAO();
+$livro = $livroDAO->getLivroById($idLivro);
+if (!$livro) {
+    echo "erro: livro nao encontrado";
+    return;
+}
+$titulo = $livro->getTitulo();
+$descricao = $livro->getDescricao();
+$qntPaginas = $livro->getPaginas();
+$lancamento = $livro->getLancamento();
+$edicao = $livro->getEdicao();
+
+$idImagem = $livro->getImagem();
+$imagem = $imagemDAO->getImagemById($idImagem);
+
+$idAutor = $livro->getAutor();
+$autor = $autorDAO->getAutorById($idAutor);
+$nomeAutor = $autor->getNome();
+
+$idEditora = $livro->getEditora();
+$editora = $editoraDAO->getEditoraById( $idEditora );
+$nomeEditora = $editora->getNome();
+
+$idClassificacao = $livro->getClassificacao();
+$classificacao = $classificacaoDAO->getClassificacaoById($idClassificacao);
+$nomeClassificacao = $classificacao->getClassificacao();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -12,47 +48,31 @@ use App\Utility\Paths;
             <div class="card p-4 shadow rounded-4">
 
                 <div class="mb-4">
-                    <a href="livros.html" class="btn btn-outline-accent">
+                    <a href="<?php echo Paths::MAIN_FOLDER . Paths::VIEW_FOLDER ?>Livros" class="btn btn-outline-accent">
                         ← Voltar
                     </a>
                 </div>
 
                 <div class="border-bottom pb-3 mb-4">
-                    <h2 class="fw-bold">Nos bastidores da Amazon</h2>
+                    <h2 class="fw-bold"><?php echo $livro->getTitulo(); ?></h2>
                 </div>
 
                 <div class="row g-4 align-items-start">
                     <div class="col-md-4 text-center">
-                        <img src="https://m.media-amazon.com/images/I/61dAm62y2QL._SY466_.jpg"
+                        <img src="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER ?>img/Livros/<?php echo $imagem->getNome()  ?>"
                             alt="Capa do livro Nos bastidores da Amazon" class="img-fluid rounded">
                     </div>
 
                     <div class="col-md-8">
-                        <p><strong>Autor:</strong> Richard L. Brandt</p>
-                        <p><strong>Editora:</strong> Benvirá</p>
-                        <p><strong>Páginas:</strong> 176</p>
-                        <p><strong>Lançamento:</strong> 15 de Março de 2011</p>
-                        <p><strong>Edição:</strong> 1</p>
-                        <p><strong>Classificação:</strong> 14 anos</p>
+                        <p><strong>Autor: </strong><?php echo $nomeAutor?></p>
+                        <p><strong>Editora: </strong><?php echo $nomeEditora?></p>
+                        <p><strong>Páginas: </strong><?php echo $qntPaginas ?></p>
+                        <p><strong>Lançamento: </strong><?php echo $lancamento ?></p>
+                        <p><strong>Edição: </strong><?php echo $edicao ?></p>
+                        <p><strong>Classificação: </strong><?php echo $nomeClassificacao ?> anos</p>
 
                         <div class="bg-light p-3 border-start border-accent mt-4">
-                            <p class="fst-italic m-0"><strong>Descrição:</strong> AO modelo de negócios da Amazon é
-                                muito simples e torna fácil e conveniente a compra on-line, por isso os consumidores não
-                                pensam duas vezes em usar o site para suas compras. Isso se resume a praticamente um
-                                botão em cada página, o de comprar agora mesmo com um só clique.Qual a razão de a Amazon
-                                ser tão bem-sucedida? Isso muito tem a ver com Jeff Bezos, presidente e fundador da
-                                Amazon. A princípio mais um nerd do que um homem de negócios, Jeff teve a visão de
-                                investir no inexplorado mercado on-line para vender livros e continuou a descobrir novas
-                                oportunidades de mercado, de alimentos a peças de automóveis. Ele é uma verdadeira
-                                máquina de calcular, tem muita energia, é apaixonado pelo que faz e decidiu transformar
-                                radicalmente o varejo. Com inúmeras entrevistas com funcionários da Amazon, concorrentes
-                                e observadores, Richard Brandt decifrou como Bezos pensa, o que dirige suas ações e como
-                                ele toma decisões. Qualquer pessoa que esteja nesse negócio pode aprender muito com o
-                                exemplo de evolução contínua da Amazon."Jeff Bezos é o novo Steve Jobs. Não espera um
-                                mercado explodir, ele o cria. É melhor ainda que a Apple na construção de um
-                                ecossistema." Gizmodo, o maior site de tecnologia do mundo"Expõe 'táticas brutais' do
-                                fundador da Amazon". Folha de S. Paulo"Obcecada pelo cliente; não pela concorrência."
-                                Jeff Bezos</p>
+                            <p class="fst-italic m-0"><strong>Descrição: </strong><?php echo $descricao ?></p>
                         </div>
 
                         <button class="btn btn-accent text-white mt-4 px-4 py-2">

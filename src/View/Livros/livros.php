@@ -97,10 +97,10 @@ $total_pages = ceil($total_records / $records_per_page);
                 ?>
                 <div class="card negocios">
                 <div class="img-container">
-                    <img src="https://m.media-amazon.com/images/I/61dAm62y2QL._SY466_.jpg"
+                    <img src="<?php echo Paths::MAIN_FOLDER . Paths::ASSETS_FOLDER ?>img/Livros/<?php echo $imagem->getNome()  ?>"
                         alt="Nos bastidores da Amazon">
                     <div class="overlay">
-                        <a href="#">Saiba mais</a>
+                        <a href="<?php echo Paths::MAIN_FOLDER . Paths::VIEW_FOLDER ?>Livros/?page=informacoes&id=<?php echo $row["idLivro"];?>">Saiba mais</a>
                     </div>
                 </div>
                 <div class="card-body">
