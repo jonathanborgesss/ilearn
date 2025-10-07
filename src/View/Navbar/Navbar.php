@@ -1,6 +1,7 @@
 <?php
-Use App\Utility\Paths
-
+use App\Utility\Paths;
+use App\Utility\Session;
+$Session = new Session();
 ?>
 
 <header id="header" class="header d-flex align-items-center fixed-top">
@@ -14,7 +15,7 @@ Use App\Utility\Paths
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="<?php echo Paths::MAIN_FOLDER; ?>#hero" >Home</a></li>
+        <li><a href="<?php echo Paths::MAIN_FOLDER; ?>#hero">Home</a></li>
         <li><a href="<?php echo Paths::MAIN_FOLDER; ?>#about">Sobre</a></li>
         <li><a href="<?php echo Paths::MAIN_FOLDER; ?>#features">Recursos</a></li>
         <li><a href="<?php echo Paths::MAIN_FOLDER; ?>#services">Soluções</a></li>
@@ -30,11 +31,39 @@ Use App\Utility\Paths
             <li><a href="<?php echo Paths::MAIN_FOLDER . Paths::VIEW_FOLDER; ?>Livros">Catálogo</a></li>
             <?php
             break;
-
         }
+
+
         ?>
 
         <li><a href="<?php echo Paths::MAIN_FOLDER; ?>#contact">Contato</a></li>
+        <?php
+        if ($Session->getAccess() > 1) {
+          ?>
+          <li class="dropdown"><a href="#"><span>ADMIN</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Painel de Controle</a></li>
+              <?php
+              $page = $_GET['page'] ?? 'livros';
+              switch ($page) {
+                case "livros":
+                  ?>
+                   <li><a href="#">Cadastrar Livro</a></li>
+                   <?php
+                  break;
+                case "informacoes":
+                    ?>
+                   <li><a href="#">Alterar Livro</a></li>
+                   <?php
+                  break;
+                default:
+              }
+              ?>
+            </ul>
+          </li>
+          <?php
+        }
+        ?>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>

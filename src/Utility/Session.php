@@ -6,6 +6,10 @@ namespace App\Utility;
         private $login = null;
         private $timeSession = 1200; //1200 segundos / 20 minutos
         private $timeCanary = 300; 
+
+        private $user = null;
+        private $access = -1;
+        private $email = null;
     
         public function __construct(){
             if(session_id() == ''){
@@ -41,12 +45,19 @@ namespace App\Utility;
             $_SESSION['name'] = $user->getNome();
             $_SESSION['email'] = $user->getEmail();
             $_SESSION['permission'] = $user->getAcesso();
+            $this->user = $user;
+            $this->access = $user->getAcesso();
+            $this->email = $user->getEmail();
         }
 
         public function checkUser($user){
             if(!isset($user)){
                 header("Location: " . Paths::MAIN_FOLDER . Paths::VIEW_FOLDER . "conta/NoLogin");
             }
+        }
+
+        public function getAccess(){
+            return $_SESSION["permission"];
         }
     
         public function verifyInsideSession($required){
