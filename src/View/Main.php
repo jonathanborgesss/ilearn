@@ -263,7 +263,7 @@ use App\Utility\Paths
             <h2 class="display-4 mb-4">Junte-se à nossa comunidade de leitores</h2>
             <p class="mb-4">Crie seu perfil gratuito, compartilhe suas paixões literárias e descubra um universo de
               novas histórias e conhecimentos esperando por você.</p>
-            <a href="login/cadastro.html" class="btn btn-cta">Crie Sua Conta</a>
+            <a href="<?php echo Paths::MAIN_FOLDER . Paths::VIEW_FOLDER ?>Login/?page=cadastro" class="btn btn-cta">Crie Sua Conta</a>
           </div>
 
           <div class="shape shape-1">
@@ -504,7 +504,7 @@ use App\Utility\Paths
               <h3>Pronto para começar a sua jornada literária?</h3>
               <p>Explore nosso acervo, descubra o que nossa comunidade está lendo e encontre sua próxima grande
                 história. A aventura está a apenas um clique de distância.</p>
-              <a class="cta-btn" href="livros/livros.html">Explore o Acervo Agora</a>
+              <a class="cta-btn" href="<?php echo Paths::MAIN_FOLDER . Paths::VIEW_FOLDER ?>Livros">Explore o Acervo Agora</a>
             </div>
           </div>
         </div>
